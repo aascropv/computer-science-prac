@@ -8,7 +8,7 @@ int main() {
     while (cin >> mode) {
         int letter = 65;
         switch (mode) {
-            case 'T':
+            case 'T':   //triangle
             case 't':
                 cout << "Enter the height: ";
                 cin >> height;
@@ -24,12 +24,12 @@ int main() {
                 }
                 cout << "Enter the shape: ";
                 break;
-            case 'D':
+            case 'D':   //diamond
             case 'd':
                 cout << "Enter the height: ";
                 cin >> height;
                 width = height;
-                for (int i = 0; i < (height / 2); i++) {
+                for (int i = 0; i < (height / 2); i++) {    //upper part of the diamond
                     for (int j = 0; j < (width / 2 - i); j++) cout << "*";
                     for (int j = 0; j < (i * 2 + 1); j++) {
                         cout << (char)(letter++);
@@ -38,7 +38,7 @@ int main() {
                     for (int j = 0; j < (width / 2 - i); j++) cout << "*";
                     cout << endl;
                 }
-                for (int i = (height / 2); i >= 0; i--) {
+                for (int i = (height / 2); i >= 0; i--) {   //lower part of the diamond
                     for (int j = 0; j < (width / 2 - i); j++) cout << "*";
                     for (int j = 0; j < (i * 2 + 1); j++) {
                         cout << (char)(letter++);
@@ -49,28 +49,28 @@ int main() {
                 }
                 cout << "Enter the shape: ";
                 break;
-            case 'I':
+            case 'I':   //Interleaved
             case 'i':
                 cout << "Enter the height: ";
                 cin >> height;
                 width = height;
                 for (int i = 0; i < height; i++) {
-                    if (i % 2 == 0) {
+                    if (i % 2 == 0) {   //even row
                         for (int j = 0; j < width; j++) {
-                            if (j % 2 == 0) {
+                            if (j % 2 == 0) {   //even column
                                 cout << (char)(letter++);
                                 if (letter > 90) letter = 65;
                             }
-                            else
+                            else    //odd column
                                 cout << "*";
                         }
                     }
-                    else {
+                    else {  //odd row
                         for (int j = 0; j < width; j++) {
-                            if (j % 2 == 0) {
+                            if (j % 2 == 0) {   //even column
                                 cout << "*";
                             }
-                            else {
+                            else {  //odd column
                                 cout << (char)(letter++);
                                 if (letter > 90) letter = 65;
                             }
@@ -80,10 +80,10 @@ int main() {
                 }
                 cout << "Enter the shape: ";
                 break;
-            case 'E':
+            case 'E':   //exit
             case 'e':
                 return 0;
-            default:
+            default:    //others
                 cout << "Reenter the shape: ";
                 break;
         }
