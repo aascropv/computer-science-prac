@@ -29,9 +29,9 @@ void findPairs(int* arr, int n, int target) {
 // Function to sort the array using Bubble Sort
 void getResult(int* arr, int n) {
     for (int i = 0; i < n - 1; i++) {   //bubble sort array from smallest to largest
-        for (int j = 0; j < n - i; j++) {
-            if (arr[j] > arr[j+1]) {
-                swap(arr[j], arr[j+1]);
+        for (int j = 0; j < n - i - 1; j++) {
+            if (*(arr+j) > *(arr+j+1)) { //use pointer to store the array
+                swap(*(arr+j), *(arr+j+1));
             }
         }
     }
