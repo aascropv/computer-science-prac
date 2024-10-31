@@ -42,14 +42,14 @@ int main() {
     cin >> n;
 
     if (n < 2 || n > 10) {
-        return 1;
+        return -1;
     }
 
     int arr[n];
     for (int i = 0; i < n; ++i) {
         cin >> arr[i];
         if (arr[i] < -10 || arr[i] > 10) {
-            return 1;
+            return -1;
         }
     }
 
